@@ -1,0 +1,19 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  S3BucketName:
+    Description: S3 bucket name
+    Type: String
+    Default: test-bucket-baws
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      BucketName: !Ref S3BucketName
+      
+Outputs:
+  MyS3Bucket:
+    Description: A reference to the created S3 bucket
+    Value: !Ref MyS3Bucket
